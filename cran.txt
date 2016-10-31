@@ -1,0 +1,7 @@
+shiny
+shinythemes
+data.table
+tools
+stringr
+tidyr
+dplyr
