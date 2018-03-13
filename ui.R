@@ -48,8 +48,8 @@ shinyUI(fluidPage(theme = shinythemes::shinytheme("cerulean"),
                                             column(3,numericInput("ctrlFromSearch",
                                                                   "Control ID",
                                                                   value=2))),
-                                   fluidRow(column(3, actionButton("downloadFromSearch", "Download")),
-                                            column(9, verbatimTextOutput("consoleSearch"))),
+                                   # fluidRow(column(3, actionButton("downloadFromSearch", "Download")),
+                                   #          column(9, verbatimTextOutput("consoleSearch"))),
                                    textOutput("fileSizeFuzzy")),
                                  
                                  
