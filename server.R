@@ -1,20 +1,23 @@
-require(shiny)
-require(shinythemes)
-require(data.table)
-require(tools)
-require(stringr)
-require(tidyr)
-require(dplyr)
-source("ENCODExplorer.R")
-source("createDesign.R")
-source("download.R")
-source("fuzzySearch.R")
-source("prepare_data.R")
-source("query.R")
-source("rest_api.R")
-source("shiny_encode.R")
+library(shiny)
+library(shinythemes)
+library(data.table)
+library(tools)
+library(stringr)
+library(tidyr)
+library(dplyr)
+#library(ENCODExplorer)
 
-server <- function(input, output) {
+#source("shiny_encode.R")
+
+shinyServer(function(input, output, session) {
+  #source("ENCODExplorer.R")
+  source("createDesign.R")
+  source("download.R")
+  source("fuzzySearch.R")
+  source("prepare_data.R")
+  source("query.R")
+  source("rest_api.R")
+  
   
   load(file = "data/encode_df.rda")
   allFilter <- c("accession", "dataset_type","lab", "title", "file_type",
@@ -550,4 +553,4 @@ server <- function(input, output) {
                                          options=list(searching=FALSE))
   })
   
-}
+})
